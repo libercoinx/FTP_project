@@ -1,0 +1,29 @@
+<Window x:Class="FtpClient.App.Dialogs.ConflictDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="520"
+        Height="220"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        Title="文件已存在">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="目标位置存在同名文件" FontSize="19" FontWeight="SemiBold"/>
+        <TextBlock x:Name="DetailText"
+                   Grid.Row="1"
+                   Margin="0,12"
+                   Foreground="{StaticResource SecondaryTextBrush}"
+                   TextWrapping="Wrap"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="取消" Style="{StaticResource SecondaryButton}" Click="Cancel_OnClick"/>
+            <Button Content="重命名" Style="{StaticResource SecondaryButton}" Click="Rename_OnClick"/>
+            <Button Content="覆盖" Background="#FF9500" Click="Overwrite_OnClick"/>
+            <Button Content="续传" Click="Resume_OnClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

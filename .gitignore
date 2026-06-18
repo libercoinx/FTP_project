@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+.idea/
+.dotnet/
+.nuget/
+*.user
+*.suo
+*.log
+data/
+screenshots/
+appsettings.Local.json

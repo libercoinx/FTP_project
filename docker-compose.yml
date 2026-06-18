@@ -1,0 +1,43 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: ftp-client-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ftp_client
+      MYSQL_USER: ftp_app
+      MYSQL_PASSWORD: ftp_app_password
+      TZ: Asia/Shanghai
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_password"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  ftp:
+    image: fauria/vsftpd
+    container_name: ftp-client-test-server
+    restart: unless-stopped
+    environment:
+      FTP_USER: ftpuser
+      FTP_PASS: ftp_password
+      PASV_ADDRESS: 127.0.0.1
+      PASV_MIN_PORT: 21100
+      PASV_MAX_PORT: 21110
+      LOCAL_UMASK: "022"
+      FILE_OPEN_MODE: "0666"
+    ports:
+      - "2121:21"
+      - "21100-21110:21100-21110"
+    volumes:
+      - ftp_data:/home/vsftpd/ftpuser
+
+volumes:
+  mysql_data:
+  ftp_data:
