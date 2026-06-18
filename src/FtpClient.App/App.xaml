@@ -5,7 +5,7 @@
     <Application.Resources>
         <Color x:Key="BackgroundColor">#F5F5F7</Color>
         <Color x:Key="CardColor">#FFFFFFFF</Color>
-        <Color x:Key="PrimaryColor">#007AFF</Color>
+        <Color x:Key="PrimaryColor">#191A1B</Color>
         <Color x:Key="TextColor">#1D1D1F</Color>
         <Color x:Key="SecondaryTextColor">#6E6E73</Color>
         <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
@@ -32,7 +32,13 @@
                         <Border Background="{TemplateBinding Background}"
                                 CornerRadius="9"
                                 Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"
+                                              TextElement.FontFamily="{TemplateBinding FontFamily}"
+                                              TextElement.FontSize="{TemplateBinding FontSize}"
+                                              TextElement.FontWeight="{TemplateBinding FontWeight}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

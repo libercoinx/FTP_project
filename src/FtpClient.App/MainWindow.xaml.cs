@@ -93,6 +93,11 @@ public partial class MainWindow : Window
             return;
         }
 
+        if (PasswordInput.Password == _viewModel.Password)
+        {
+            return;
+        }
+
         _syncingPassword = true;
         PasswordInput.Password = _viewModel.Password;
         _syncingPassword = false;

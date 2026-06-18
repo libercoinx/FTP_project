@@ -332,7 +332,8 @@ public sealed class MainViewModel : ObservableObject, IAsyncDisposable
             }
 
             Sites.Insert(0, site);
-            SelectedSite = site;
+            _selectedSite = site;
+            OnPropertyChanged(nameof(SelectedSite));
         }
         catch
         {

@@ -20,10 +20,10 @@
                    Foreground="{StaticResource SecondaryTextBrush}"
                    TextWrapping="Wrap"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="取消" Style="{StaticResource SecondaryButton}" Click="Cancel_OnClick"/>
-            <Button Content="重命名" Style="{StaticResource SecondaryButton}" Click="Rename_OnClick"/>
-            <Button Content="覆盖" Background="#FF9500" Click="Overwrite_OnClick"/>
-            <Button Content="续传" Click="Resume_OnClick"/>
+            <Button Content="取消" MinWidth="70" Style="{StaticResource SecondaryButton}" Click="Cancel_OnClick"/>
+            <Button Content="重命名" MinWidth="70" Style="{StaticResource SecondaryButton}" Click="Rename_OnClick"/>
+            <Button Content="覆盖" MinWidth="70" Background="#FF9500" Click="Overwrite_OnClick"/>
+            <Button Content="续传" MinWidth="70" Click="Resume_OnClick"/>
         </StackPanel>
     </Grid>
 </Window>
