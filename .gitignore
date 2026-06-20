@@ -7,6 +7,7 @@ obj/
 *.user
 *.suo
 *.log
+*.docx
 data/
 screenshots/
 appsettings.Local.json
