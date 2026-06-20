@@ -2,6 +2,56 @@
 
 这是一个面向 Windows 10/11 的 FTP 桌面客户端。客户端使用 C#、.NET 8 和 WPF 开发，从 TCP 连接开始自行实现 FTP 控制通道和数据通道，不依赖现成 FTP 客户端库。
 
+## 界面截图
+
+### 1. FTP 客户端主界面
+
+包含服务器地址、端口、用户名、密码输入框、连接按钮、远程目录列表和任务列表。
+
+![FTP 客户端主界面](screenshots/01-main-window.png)
+
+### 2. FTP 服务器连接成功界面
+
+状态栏显示已连接，远程目录文件列表正常显示。
+
+![FTP 服务器连接成功界面](screenshots/02-connected.png)
+
+### 3. 远程目录浏览界面
+
+进入远程 `reports` 目录后，当前路径更新为 `/reports`，目录内容同步刷新。
+
+![远程目录浏览界面](screenshots/03-remote-directory-reports.png)
+
+### 4. 文件下载过程界面
+
+下载任务处于传输中状态，进度条和速度信息实时更新。
+
+![文件下载过程界面](screenshots/04-download-running.png)
+
+### 5. 文件上传完成界面
+
+上传任务状态为已完成，远程目录中出现上传后的文件。
+
+![文件上传完成界面](screenshots/05-upload-completed.png)
+
+### 6. 断点续传测试界面
+
+暂停任务后继续传输，任务从已有进度继续执行，而不是从 0% 重新开始。
+
+![断点续传测试界面](screenshots/06-resume-transfer.png)
+
+### 7. 数据库表结构与数据记录
+
+展示 `sites` 表和 `transfer_tasks` 表结构，以及连接站点、下载、上传和续传任务记录。
+
+![数据库表结构与数据记录](screenshots/07-database-records.png)
+
+### 8. 测试运行结果
+
+xUnit 测试全部通过。
+
+![测试运行结果](screenshots/08-xunit-tests.png)
+
 ## 功能
 
 - FTP 用户名和密码登录

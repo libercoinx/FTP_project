@@ -9,5 +9,5 @@ obj/
 *.log
 *.docx
 data/
-screenshots/
+# screenshots/
 appsettings.Local.json
